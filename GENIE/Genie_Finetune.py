@@ -102,6 +102,8 @@ def get_arguments():
     return args
 
 def setup_env(args):
+    print('Xuehai Pan ni ma si le')
+    print(args.local_rank)
     if args.local_rank == -1:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         args.n_gpu = torch.cuda.device_count()
