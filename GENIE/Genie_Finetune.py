@@ -137,7 +137,9 @@ def main():
 
     logger.log(f'saving the hyperparameters to {args.checkpoint_path}/training_args.json')
     with open(f'{args.checkpoint_path}/training_args.json', 'w') as f:
-        json.dump(args.__dict__, f, indent=2)
+        f.write(json.dumps(vars(args), indent=2))
+        f.close()
+        # json.dump(args.__dict__, f, indent=2)
 
     # seed setting
     set_seed(args.seed)
