@@ -128,7 +128,7 @@ def load_states_from_checkpoint(model_file: str) -> CheckpointState:
 def main():
     # args setting
     args = get_arguments()
-
+    setup_env(args)
     # out dir set
     if dist.get_rank() == 0:
         if not os.path.exists(args.checkpoint_path):
@@ -142,7 +142,7 @@ def main():
     # seed setting
     set_seed(args.seed)
     # dpp setting
-    setup_env(args)
+    
     # dist_util.setup_dist()
 
     # logger setting
