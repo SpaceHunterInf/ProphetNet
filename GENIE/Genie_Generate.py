@@ -86,7 +86,7 @@ def get_arguments():
     parser.add_argument('--seed', type=int, default=101, help='')
     #
     # muti-gpu
-    parser.add_argument("--local_rank", type=int, default=-1, help="For distributed training: local_rank")
+    parser.add_argument("--local_rank" ,'--local-rank', type=int, default=-1, help="For distributed training: local_rank")
     parser.add_argument("--server_ip", type=str, default="", help="For distant debugging.")
     parser.add_argument("--server_port", type=str, default="", help="For distant debugging.")
 
